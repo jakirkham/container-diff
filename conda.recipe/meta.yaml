@@ -1,0 +1,24 @@
+{% set version = "0.9.0" %}
+
+package:
+  name: container-diff
+  version: {{ version }}
+
+source:
+  - git_url: ..
+    git_rev: v{{ version }}
+    folder: go/src/github.com/GoogleCloudPlatform/container-diff
+
+requirements:
+  build:
+    - go
+
+test:
+  commands:
+    - container-diff
+
+about:
+  home: https://github.com/GoogleContainerTools/container-diff
+  license: Apache 2.0
+  license_file: go/src/github.com/GoogleCloudPlatform/container-diff/LICENSE
+  summary: Diff your Docker containers 
